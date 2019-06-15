@@ -1,20 +1,17 @@
-///Strings
+///Arrow functions
 
-let firstName = 'John';
-let lastName = 'Smith';
-const yearOfBirth = 1990;
-function calcAge(year){
-  return year - yearOfBirth
-}
+const years = [1990, 1965, 1982, 1937];
 
-console.log(calcAge(2019));
+//ES5
+var ages5 = years.map(function(el){
+  return 2019 - el;
+})
+console.log(ages5)
 
-console.log('This is ' + firstName + ' ' + lastName + ' and he was born in ' + yearOfBirth + ', and today he is ' + calcAge(2019) + ' years old.');
-console.log(`This is ${firstName} ${lastName}, and he was born in ${yearOfBirth}, and today he is ${calcAge(2019)} years old.`);
+let ages6 = years.map(el => 2019 - el);
 
-const n = `${firstName} ${lastName}`;
-console.log(n);
-console.log(n.startsWith('J'))
-console.log(n.endsWith('l'))
-console.log(n.includes('ith'))
-console.log(`${firstName} `.repeat(6))
+console.log(ages6)
+
+ages6 = years.map((el, index) => `Age element ${index + 1}: ${2019 - el}.`)
+
+console.log(ages6)
